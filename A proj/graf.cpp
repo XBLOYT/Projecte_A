@@ -79,3 +79,6 @@ vector<int> Graf::nodesadjacents(int nodeID){
     return ret;
 }
 
+bool Graf::esValid(int n){
+    return nodes[n].valid;
+}

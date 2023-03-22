@@ -22,6 +22,7 @@ class Graf{
         void eliminarNode(int id);
         int nNodes();
         vector<int> nodesadjacents(int nodeID);
+        bool esValid(int n);
 };
 
 
