@@ -23,6 +23,7 @@ class Graf{
         int nNodes();
         vector<int> nodesadjacents(int nodeID);
         bool esValid(int n);
+        int grauNode(int n);
 };
 
 

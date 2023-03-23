@@ -82,3 +82,11 @@ vector<int> Graf::nodesadjacents(int nodeID){
 bool Graf::esValid(int n){
     return nodes[n].valid;
 }
+
+int Graf::grauNode(int n){
+    int r = 0;
+    for(int i = 0; i < nodes[n].adjacents.size(); ++i){
+        if(nodes[n].adjacents[i].second) ++r; //Hem de tenir en compte que no totes les arestes son vàlides.
+    }
+    return r;
+}

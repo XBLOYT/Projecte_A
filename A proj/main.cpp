@@ -22,6 +22,25 @@ queue<int> difusioIC(Graf G, double p, queue<int> &Activats){
     return ActTot;
 }
 
+queue<int> difusioLT(Graf G, double r, queue<int> &Activats){
+    queue<int> ActTot = Activats;
+    vector<int> InfluenciaNodes(G.nNodes(), 0);
+    while(Activats.size() > 0){
+        int node = Activats.front();
+        if(G.esValid(node)){
+            vector<int> adj = G.nodesadjacents(node);
+            for(int i = 0; i < adj.size(); ++i){
+                InfluenciaNodes[adj[i]]++;
+                if(InfluenciaNodes[adj[i]] > r*G.grauNode(adj[i])){
+                    Activats.push(adj[i]);
+                    ActTot.push(adj[i]);
+                }
+            }
+        }
+    }
+    return ActTot;
+}
+
 int main(){
     Graf G;
     Node N;
